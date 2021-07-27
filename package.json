@@ -1,14 +1,24 @@
 {
-  "name": "clhelper",
-  "version": "0.0.1",
+  "name": "@dlijs/cltemplate",
+  "version": "0.0.2",
   "description": "全局命令小助手",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "publish": "npm publish --access=public",
+    "start": "dumi dev",
+    "docs:build": "dumi build",
+    "docs:deploy": "gh-pages -d docs-dist",
+    "build": "father-build",
+    "deploy": "npm run docs:build && npm run docs:deploy",
+    "release": "npm run build && npm publish",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage"
   },
   "keywords": [
     "React",
-    "helper",
     "命令行",
     "components",
     "template"
@@ -16,16 +26,42 @@
   "bin": {
     "cltemplate": "lib/index.js"
   },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "node scripts/verifyCommit.js"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
   "authors": [
     ""
   ],
   "license": "ISC",
   "email": "437132124@qq.com",
   "repository": {
-    "url": ""
+    "url": "https://github.com/dlijs/cliDemo"
   },
   "dependencies": {
     "commander": "^6.0.0",
-    "colors-cli": "^1.0.27"
+    "colors-cli": "^1.0.27",
+    "antd-mobile": "^2.3.4",
+    "copy-to-clipboard": "^3.3.1",
+    "dumi-theme-mobile": "^1.1.6",
+    "react": "^16.12.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.171",
+    "@umijs/test": "^3.0.5",
+    "dumi": "^1.0.16",
+    "father-build": "^1.17.2",
+    "gh-pages": "^3.0.0",
+    "lint-staged": "^10.0.7",
+    "prettier": "^2.2.1",
+    "yorkie": "^2.0.0"
   }
 }
