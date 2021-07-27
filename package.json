@@ -1,0 +1,31 @@
+{
+  "name": "clhelper",
+  "version": "0.0.1",
+  "description": "全局命令小助手",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "React",
+    "helper",
+    "命令行",
+    "components",
+    "template"
+  ],
+  "bin": {
+    "cltemplate": "lib/index.js"
+  },
+  "authors": [
+    ""
+  ],
+  "license": "ISC",
+  "email": "437132124@qq.com",
+  "repository": {
+    "url": ""
+  },
+  "dependencies": {
+    "commander": "^6.0.0",
+    "colors-cli": "^1.0.27"
+  }
+}
