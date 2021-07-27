@@ -1,5 +1,5 @@
 {
-  "name": "clhelper",
+  "name": "@dlijs/cltemplate",
   "version": "0.0.1",
   "description": "全局命令小助手",
   "main": "index.js",
