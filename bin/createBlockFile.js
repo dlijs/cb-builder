@@ -25,7 +25,8 @@ module.exports = function createBlockFile(type, name) {
         console.log(color.green('write:'), createPath);
         copy(targetPath, createPath);
       } else {
-        copyFolder(`${name}/${item}`);
+        console.log(`${path}/${item}`);
+        copyFolder(`${path}/${item}`);
       }
     });
   };

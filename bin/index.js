@@ -5,7 +5,7 @@ const createBlockFile = require('./createBlockFile');
 
 const exitCommander = () => {
   console.error(color.red('命令号输入有误, 命令号暂时仅仅支持： '));
-  console.log(color.red('cltemplate add page <name>'));
+  console.log(color.red('cblock add page <name>'));
   console.log(color.red('请重新输入～'));
   process.exit();
 };
@@ -32,7 +32,7 @@ const commanderAction = (command, type, name) => {
 };
 
 program
-  .version('0.0.3', '-v --version -V')
+  .version('0.0.6', '-v --version -V')
   .arguments('<command> <type> <name>')
   .action(commanderAction)
   .parse(process.argv);
